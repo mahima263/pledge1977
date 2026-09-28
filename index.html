@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#AB4531" />
+<title>Class of 1977 · Golden Jubilee Giving · IIT Kanpur</title>
+<meta name="description" content="Class of 1977 Golden Jubilee - make your pledge to IIT Kanpur and help the batch reach its ₹5 Cr pledge goal." />
+
+<!-- ===== Fonts: Lato everywhere ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+
+<!-- ===== Tailwind (Play CDN) - preflight OFF so it augments the existing design without resetting it ===== -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    corePlugins: { preflight: false },
+    theme: {
+      extend: {
+        colors: {
+          red:     '#AB4531',   /* Indian Red */
+          redSoft: '#C25B46',
+          redDeep: '#421E18',   /* deep maroon-brown */
+          cream:   '#FCE2C5',
+          sand:    '#E3B489',
+        },
+        fontFamily: { sans: ['Lato', 'system-ui', 'sans-serif'] },
+      }
+    }
+  };
+</script>
+
+<style>
+:root{
+  /* ===== Brand palette: Indian Red #AB4531 · Deep #421E18 · Cream #FCE2C5 ===== */
+  --brick:#AB4531; --brick-deep:#421E18; --espresso:#421E18;
+  --cream:#FCE2C5; --ochre:#C26A43; --ochre-light:#E3B489;
+  --red-soft:#C25B46;
+  --ink:#42221B; --muted:#8A6F63;
+  --bg:#ffffff; --bg-2:#FBF5EE; --paper:#ffffff;
+  --line:rgba(66,30,24,.12); --line-soft:rgba(66,30,24,.07);
+  --shadow:0 24px 60px -32px rgba(66,30,24,.45);
+  --shadow-sm:0 12px 30px -20px rgba(66,30,24,.32);
+  --radius:22px; --maxw:1280px; --pad:18px;
+  --appbar-h:58px; --nav-h:62px; --wa:#25a866;
+  --mwidget-h:86px;
+  --sans:'Lato',system-ui,sans-serif;
+  --serif:'Lato',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;background:var(--bg)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+section{scroll-margin-top:80px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:1rem;border:0;cursor:pointer;border-radius:100px;padding:15px 28px;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s,filter .2s}
+.btn-primary{background:var(--brick);color:#fff;box-shadow:0 16px 32px -14px rgba(171,69,49,.7)}
+.btn-primary:hover{transform:translateY(-3px);filter:brightness(1.05)}
+.btn-ghost{background:#fff;color:var(--brick);border:1.6px solid rgba(171,69,49,.5)}
+.btn-ghost:hover{background:var(--brick);color:#fff;border-color:var(--brick)}
+.btn-lg{font-size:1.04rem;padding:16px 30px;font-weight:900}
+
+/* ====== DESKTOP NAV ====== */
+.nav{position:sticky;top:0;z-index:70;backdrop-filter:saturate(160%) blur(14px);background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 10px 30px -22px rgba(66,30,24,.4)}
+.nav .inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h)}
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer}
+.brand-logo{height:60px;width:auto;display:block}
+.brand .bt{line-height:1.1}
+.brand .bt b{font-weight:900;color:var(--brick);display:block;font-size:1rem;letter-spacing:-.01em}
+.brand .bt span{font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:700;display:block;margin-top:2px}
+.nav .links{display:flex;align-items:center;gap:4px}
+.nav .links a{font-size:.9rem;font-weight:700;padding:9px 13px;border-radius:10px;cursor:pointer;opacity:.85;transition:.2s}
+.nav .links a:hover,.nav .links a.active{background:rgba(171,69,49,.08);color:var(--brick);opacity:1}
+.nav-cta{background:var(--brick);color:#fff !important;padding:10px 20px;border-radius:100px;font-weight:900;cursor:pointer;font-size:.9rem;box-shadow:0 12px 24px -14px rgba(171,69,49,.8);transition:transform .2s;opacity:1 !important}
+.nav-cta:hover {
+    background-color: #421e18!important; /* darker shade */
+    color: #fff!important;
+    transform: translateY(-2px);
+}
+/* ====== MOBILE APP BAR ====== */
+.appbar{display:none;position:fixed;top:0;left:0;right:0;z-index:80;height:var(--appbar-h);align-items:center;justify-content:space-between;padding:0 16px;background:rgba(255,255,255,.96);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
+.appbar .brand-logo{height:36px}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;border:0;background:rgba(171,69,49,.08);border-radius:11px;cursor:pointer;padding:0 11px;flex:none}
+.hamburger span{display:block;height:2.5px;border-radius:3px;background:var(--brick);transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* ====== MOBILE DRAWER ====== */
+.drawer-overlay{position:fixed;inset:0;z-index:84;background:rgba(66,30,24,.45);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.drawer-overlay.show{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:85;width:min(80vw,310px);background:#fff;box-shadow:-24px 0 56px -22px rgba(66,30,24,.45);transform:translateX(100%);transition:transform .34s cubic-bezier(.3,.8,.3,1);display:flex;flex-direction:column;padding:66px 22px 30px;gap:2px}
+.drawer.show{transform:none}
+.drawer-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border:0;background:rgba(66,30,24,.06);border-radius:11px;font-size:1.05rem;cursor:pointer;color:var(--ink);display:flex;align-items:center;justify-content:center;transition:.2s}
+.drawer-close:hover{background:var(--brick);color:#fff}
+.drawer .d-label{font-size:.6rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 6px 6px}
+.drawer a{font-weight:900;font-size:1.18rem;color:var(--ink);padding:14px 6px;border-bottom:1px solid var(--line-soft);cursor:pointer;transition:color .2s}
+.drawer a:active{color:var(--brick)}
+.drawer .drawer-cta{margin-top:18px;background:var(--brick);color:#fff;text-align:center;border:0;border-radius:100px;padding:15px;font-family:var(--sans);font-weight:900;font-size:1rem;box-shadow:0 14px 28px -14px rgba(171,69,49,.7)}
+
+/* ====== SHARED: eyebrow ====== */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.67rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--brick);background:rgba(171,69,49,.08);padding:7px 14px;border-radius:100px;border:1px solid var(--line)}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--ochre);box-shadow:0 0 0 4px rgba(194,106,67,.22)}
+
+/* ====== HERO ====== */
+.hero{position:relative;overflow:hidden;
+  background:
+    radial-gradient(540px 280px at 88% -10%,rgba(227,180,137,.28),transparent 62%),
+    radial-gradient(640px 360px at -5% 110%,rgba(171,69,49,.08),transparent 60%),
+    linear-gradient(180deg,#FDEFE0 0%,#fff 72%);}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(171,69,49,.05) 1px,transparent 1px);background-size:24px 24px;opacity:.4;pointer-events:none}
+.hero .inner{position:relative;padding-top:38px;padding-bottom:42px;display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+.hero h1{font-weight:900;letter-spacing:-.02em;line-height:1.04;font-size:clamp(2.2rem,8vw,3.4rem);margin:15px 0 12px;color:var(--ink)}
+.hero h1 .gr{background:linear-gradient(100deg,var(--brick),var(--ochre-light) 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-style:italic;font-size:clamp(1.04rem,4vw,1.32rem);color:var(--brick-deep);opacity:.85;max-width:480px;font-weight:400}
+.hero .cta{display:flex;flex-direction:column;gap:11px;margin-top:24px;max-width:360px}
+/* Batch coordinator appeal (placeholder until copy is shared) */
+.appeal{margin-top:22px;background:rgba(255,255,255,.72);border:1px solid var(--line);border-left:4px solid var(--ochre);border-radius:14px;padding:16px 18px;max-width:480px}
+.appeal .a-label{font-size:.62rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);display:block;margin-bottom:6px}
+.appeal p{font-style:italic;font-size:.98rem;color:var(--brick-deep);line-height:1.55;font-weight:400}
+.appeal .a-by{margin-top:8px;font-style:normal;font-size:.8rem;font-weight:900;color:var(--muted)}
+/* Hero image (right side) */
+.hero-visual{position:relative}
+.hero-visual::before{content:"";position:absolute;inset:18px -14px -14px 18px;border-radius:var(--radius);background:linear-gradient(140deg,rgba(227,180,137,.4),rgba(171,69,49,.24));z-index:0}
+.hv-frame{position:relative;z-index:1;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:linear-gradient(140deg,#FDEFE0,var(--cream));display:flex;align-items:center;justify-content:center}
+/* full photo, no crop - frame takes the image's own aspect ratio */
+.hv-frame img{position:relative;z-index:1;width:100%;height:auto;display:block}
+.hv-frame .hv-fallback{position:absolute;inset:0;justify-content:center}
+.hv-fallback{display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--brick);opacity:.55;text-align:center;padding:20px}
+.hv-fallback svg{width:54px;height:54px}
+.hv-fallback span{font-size:.85rem;font-weight:700}
+.hv-tag{position:absolute;left:14px;bottom:14px;z-index:2;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:.8rem;font-weight:900;color:var(--brick-deep);box-shadow:var(--shadow-sm)}
+
+/* ====== GOAL / PROGRESS CARD ====== */
+.prog{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.prog::after{content:"";position:absolute;top:-60px;right:-50px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(227,180,137,.2),transparent 70%);pointer-events:none}
+.prog .cap{position:relative;display:flex;align-items:center;gap:8px;font-size:.74rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:var(--brick)}
+.prog .big{position:relative;font-weight:900;font-size:clamp(2.8rem,12vw,3.7rem);line-height:1;color:var(--ink);margin:10px 0 2px;letter-spacing:-.02em}
+.prog .big .pl{color:var(--ochre)}
+.prog .bsub{position:relative;color:var(--muted);font-size:.92rem;margin-bottom:18px}
+
+/* raised-vs-goal progress */
+.goalbar-wrap{position:relative;margin:4px 0 8px}
+.goalbar-top{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:9px}
+.goalbar-top .raised{font-weight:900;font-size:clamp(1.35rem,6vw,1.75rem);color:var(--brick);line-height:1;letter-spacing:-.01em}
+.goalbar-top .raised small{display:block;font-size:.6rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.goalbar-top .pct{text-align:right;font-weight:900;font-size:1.15rem;color:var(--ochre);line-height:1}
+.goalbar-top .pct small{display:block;font-size:.58rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.pbar{position:relative;height:18px;border-radius:100px;background:rgba(66,30,24,.08);overflow:hidden;border:1px solid var(--line-soft)}
+.pbar .fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:100px;background:linear-gradient(90deg,var(--brick-deep),var(--brick) 55%,var(--ochre));box-shadow:0 0 18px rgba(171,69,49,.45)}
+.pbar .fill::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:translateX(-100%);animation:sheen 2.6s .8s infinite}
+@keyframes sheen{to{transform:translateX(220%)}}
+.pbar .marker{position:absolute;top:50%;width:3px;height:22px;border-radius:3px;background:rgba(66,30,24,.28);transform:translate(-50%,-50%)}
+.goalbar-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px;font-size:.8rem;color:var(--muted);font-weight:700}
+.goalbar-foot b{color:var(--ink)}
+
+.prog .stats{position:relative;display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 4px}
+.prog .stat{flex:1;min-width:130px;background:var(--bg-2);border:1px solid var(--line-soft);border-radius:13px;padding:11px 13px;text-align:center}
+.prog .stat .sl{font-size:.62rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.prog .stat .sv{font-weight:900;font-size:1.2rem;color:var(--brick);line-height:1.2}
+.prog .pcbtn{position:relative;width:100%;margin-top:20px}
+
+/* ====== PLEDGE FORM SECTION ====== */
+.pledge{position:relative;overflow:hidden;padding:66px 0 70px}
+.pledge .pledge-bg{position:absolute;inset:-16% 0;z-index:0;background:url("_IIT6247.JPG") center/cover no-repeat;will-change:transform}
+.pledge::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(165deg,rgba(45,18,13,.9),rgba(66,30,24,.8) 48%,rgba(171,69,49,.72))}
+.pledge .wrap{position:relative;z-index:2}
+.pledge .ph{text-align:center;max-width:660px;margin:0 auto 24px}
+.pledge h2{font-weight:900;font-size:clamp(1.7rem,6vw,2.4rem);color:#fff;line-height:1.08;margin:13px 0 8px;letter-spacing:-.01em;text-shadow:0 2px 18px rgba(0,0,0,.28)}
+.pledge h2 .gr{color:var(--ochre-light)}
+.pledge .lede{color:rgba(255,255,255,.9);font-size:.98rem;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+.form-card{max-width:760px;margin:24px auto 0;background:#ffffff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.form-card .fbar{display:flex;align-items:center;gap:10px;padding:13px 18px;background:linear-gradient(120deg,var(--brick-deep),var(--brick));color:#fff;flex:none}
+.form-card .fbar .ft{font-weight:900;font-size:.92rem}
+.form-card .fbar .lock{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:.72rem;opacity:.92}
+.form-card .fbar .lock svg{width:14px;height:14px}
+.form-card iframe{display:block;width:100%;border:none;height:640px}
+.form-card .falt{padding:9px 16px;text-align:center;font-size:.78rem;color:var(--muted);border-top:1px solid var(--line-soft);flex:none}
+.form-card .falt a{color:var(--brick);font-weight:700;text-decoration:underline}
+
+/* ====== SECTIONS ====== */
+.sec{padding:46px 0}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 24px}
+.sec-head h2{font-weight:900;font-size:clamp(1.7rem,6vw,2.4rem);color:var(--ink);line-height:1.08;margin:12px 0 8px;letter-spacing:-.01em}
+.sec-head h2 .gr{color:var(--brick)}
+.sec-head p{color:var(--muted);font-size:.96rem}
+
+/* ====== CLASS LEGACY (revamped) ====== */
+.legacy{position:relative;overflow:hidden}
+.legacy::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(680px 340px at 12% 0%,rgba(252,226,197,.6),transparent 60%),
+    radial-gradient(560px 320px at 100% 100%,rgba(171,69,49,.06),transparent 60%);}
+/* headline stat band */
+.legacy-line{text-align:center;max-width:1080px;margin:0 auto 30px;font-weight:500;font-size:clamp(1.1rem,4.2vw,1.6rem);line-height:1.5;color:var(--ink)}
+.legacy-line .ll-amt{position:relative;font-weight:900;white-space:nowrap;color:var(--brick);padding:0 .08em;background:linear-gradient(transparent 62%,rgba(194,106,67,.28) 62%)}
+.legacy-line .ll-amt .ll-pl{color:var(--ochre)}
+
+.init-grid{display:grid;grid-template-columns:1fr;gap:18px;max-width:1240px;margin:0 auto}
+.init{position:relative;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 26px 28px;box-shadow:var(--shadow-sm);overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+.init::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--brick),var(--ochre-light));transition:width .35s}
+.init:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(171,69,49,.28)}
+.init:hover::before{width:8px}
+.init .init-top{display:flex;align-items:center;margin:0 0 14px}
+.init .tag{font-size:.6rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--brick);background:rgba(171,69,49,.08);border:1px solid rgba(171,69,49,.16);border-radius:100px;padding:6px 12px}
+.init h3{font-weight:900;font-size:1.22rem;color:var(--ink);line-height:1.25;margin:0 0 10px;letter-spacing:-.01em}
+.init p{color:var(--muted);font-size:.94rem;line-height:1.6;margin-top:auto}
+.init-note{text-align:center;color:var(--muted);font-size:.94rem;margin:46px auto 0;max-width:none}
+.init-note b{color:var(--brick)}
+
+/* Batch coordinators */
+.coords{max-width:1240px;margin:44px auto 0;text-align:center;background:var(--bg-2);border:1px solid var(--line-soft);border-radius:26px;padding:44px 26px 50px;position:relative;overflow:hidden}
+.coords::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(171,69,49,.05) 1px,transparent 1px);background-size:22px 22px;opacity:.5;pointer-events:none}
+.coords h3{position:relative;font-weight:900;font-size:clamp(1.5rem,5vw,2rem);color:var(--ink);margin:0 0 34px;letter-spacing:-.01em}
+.coords h3 .gr{color:var(--brick)}
+.coords .c-grid{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:26px}
+.coords .c-card{width:300px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:0;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+.coords .c-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:rgba(171,69,49,.28)}
+.coords .c-ph{width:100%;aspect-ratio:1/1;margin:0;overflow:hidden;background:linear-gradient(140deg,#fff,var(--cream));display:flex;align-items:center;justify-content:center}
+.coords .c-ph .in{display:flex;align-items:center;justify-content:center;width:100%;height:100%;overflow:hidden}
+.coords .c-ph .in img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.coords .c-card:hover .c-ph .in img{transform:scale(1.05)}
+.coords .c-ph .in svg{width:74px;height:74px;color:var(--brick);opacity:.45}
+.coords .c-ph .in img+svg{display:none}
+.coords .c-name{font-weight:900;font-size:1.3rem;color:var(--ink);line-height:1.25;letter-spacing:-.01em;padding:18px 14px 22px;text-align:center}
+
+/* ====== FAQ ====== */
+.sec.alt{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.faq{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:box-shadow .3s}
+.faq.open{box-shadow:var(--shadow-sm)}
+.faq button{width:100%;background:none;border:0;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:15px 18px;text-align:left;font-weight:700;font-size:.94rem;color:var(--ink)}
+.faq .pm{flex:none;width:23px;height:23px;border-radius:50%;background:rgba(171,69,49,.09);display:flex;align-items:center;justify-content:center;transition:transform .3s;color:var(--brick);font-size:1.1rem;line-height:1;margin-top:1px}
+.faq.open button{color:var(--brick)}
+.faq.open .pm{transform:rotate(45deg);background:var(--brick);color:#fff}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq .ans p{padding:0 18px 15px;color:var(--muted);font-size:.89rem}
+.faq .ans a{color:var(--brick);font-weight:700;text-decoration:underline}
+.faq .ans .wa-inline{display:inline-flex;align-items:center;gap:5px;color:var(--wa);text-decoration:none;background:rgba(37,168,102,.1);padding:2px 9px;border-radius:100px;font-weight:700;white-space:nowrap}
+.faq .ans .wa-inline svg{width:13px;height:13px}
+
+/* two columns on desktop, collapsible on mobile */
+.faq-cols{display:flex;flex-direction:column;gap:10px;max-width:760px;margin:0 auto}
+.faq-col{display:flex;flex-direction:column;gap:10px}
+.faq.is-hidden{display:none}
+.faq-more{display:none;margin:18px auto 0;background:#fff;border:1.5px solid var(--brick);color:var(--brick);font-weight:900;font-size:.9rem;padding:12px 24px;border-radius:100px;cursor:pointer;transition:.2s}
+.faq-more:hover{background:var(--brick);color:#fff}
+@media(min-width:980px){.faq-cols{flex-direction:row;align-items:flex-start;gap:18px;max-width:1080px}.faq-col{flex:1;min-width:0}}
+
+/* help / contact card */
+.help-card{max-width:640px;margin:26px auto 0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 22px;text-align:center;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.help-card::after{content:"";position:absolute;top:-50px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(37,168,102,.12),transparent 70%)}
+.help-card .hc-ic{position:relative;width:52px;height:52px;border-radius:15px;margin:0 auto 12px;background:rgba(37,168,102,.12);display:flex;align-items:center;justify-content:center}
+.help-card .hc-ic svg{width:26px;height:26px;color:var(--wa)}
+.help-card h3{position:relative;font-weight:900;font-size:1.3rem;color:var(--ink);margin-bottom:4px}
+.help-card p{position:relative;color:var(--muted);font-size:.92rem;margin-bottom:16px}
+.help-card .hc-actions{position:relative;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hc-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:100px;font-weight:700;font-size:.9rem;cursor:pointer;transition:transform .2s,box-shadow .2s;border:1.5px solid var(--line)}
+.hc-btn svg{width:17px;height:17px}
+.hc-btn:hover{transform:translateY(-2px)}
+.hc-wa{background:var(--wa);color:#fff;border-color:transparent;box-shadow:0 14px 28px -14px rgba(37,168,102,.7)}
+.hc-mail,.hc-call{background:#fff;color:var(--brick)}
+.hc-mail:hover,.hc-call:hover{background:var(--brick);color:#fff;border-color:var(--brick)}
+
+/* ====== CLOSING (final CTA + footer) ====== */
+.closing{background:radial-gradient(540px 280px at 80% 0,rgba(227,180,137,.34),transparent 60%),linear-gradient(125deg,var(--brick-deep),var(--brick));color:#fff;text-align:center}
+.closing .inner{padding-top:54px;padding-bottom:40px}
+.closing h2{font-weight:900;font-size:clamp(1.8rem,7vw,2.6rem);line-height:1.05;margin-bottom:12px;letter-spacing:-.01em}
+.closing .lede{opacity:.92;max-width:460px;margin:0 auto 22px;font-size:1rem}
+.closing .pledge-btn{background:var(--ochre-light);color:var(--espresso);box-shadow:0 16px 30px -14px rgba(227,180,137,.7);font-weight:900}
+.closing .ccontact{margin-top:20px;font-size:.92rem;line-height:1.9;opacity:.95}
+.closing .ccontact a{color:var(--ochre-light);font-weight:900}
+.closing .cbrand{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16)}
+.closing .cbrand b{color:var(--ochre-light);font-size:1.05rem;display:block;font-weight:900}
+.closing .caddr{margin-top:16px;font-size:.78rem;line-height:1.7;opacity:.78;padding-bottom:6px}
+.closing .caddr b{display:block;font-weight:900;opacity:1;letter-spacing:.02em}
+
+/* ====== REVEAL (GSAP-driven, with no-JS/failed-CDN fallback) ====== */
+.reveal{opacity:1;transform:none}
+html.gsap-ready .reveal{opacity:0;transform:translateY(24px);will-change:transform,opacity}
+/* keep split headings hidden only once GSAP is ready */
+html.gsap-ready .split-mask{overflow:hidden}
+
+/* ====== FLOATING WIDGET (desktop default) ====== */
+.pwidget{position:fixed;z-index:78;right:20px;bottom:20px;width:300px;transform:translateX(140%);opacity:0;transition:transform .5s cubic-bezier(.2,.85,.25,1),opacity .4s}
+.pwidget.show{transform:none;opacity:1}
+.pw-card{position:relative;background:#fff;border-radius:20px;padding:16px;border:2px solid rgba(227,180,137,.6);box-shadow:0 0 0 5px rgba(227,180,137,.16),0 28px 56px -22px rgba(66,30,24,.5)}
+.pw-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.pw-title{font-weight:900;font-size:1.04rem;color:var(--ink);display:flex;align-items:center;gap:7px}
+.pw-x{width:28px;height:28px;border-radius:8px;border:0;background:rgba(66,30,24,.06);color:var(--ink);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.pw-x:hover{background:var(--brick);color:#fff}
+.pw-big{font-weight:900;font-size:1.9rem;line-height:1;color:var(--ink)}
+.pw-big .pl{color:var(--ochre)}
+.pw-label{font-size:.62rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+/* goal progress bar */
+.pw-goal{margin-top:12px}
+.pw-goalbar{position:relative;height:10px;border-radius:100px;background:rgba(66,30,24,.08);overflow:hidden}
+.pw-goalfill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:100px;background:linear-gradient(90deg,var(--brick),var(--ochre));box-shadow:0 0 14px rgba(171,69,49,.5)}
+.pw-goaltxt{display:flex;align-items:baseline;gap:5px;margin-top:8px;font-size:.76rem;color:var(--muted);font-weight:700}
+.pw-goaltxt b{color:var(--brick);font-weight:900;font-size:.96rem}
+.pw-cta{width:100%;margin-top:14px;border:0;border-radius:13px;cursor:pointer;color:#fff;font-weight:900;font-size:.96rem;padding:13px;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(120deg,var(--brick),var(--brick-deep));box-shadow:0 16px 30px -14px rgba(171,69,49,.7);transition:transform .25s,filter .2s}
+.pw-cta:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.pw-reopen{position:fixed;z-index:78;right:20px;bottom:20px;border:0;cursor:pointer;border-radius:100px;background:linear-gradient(120deg,var(--brick),var(--brick-deep));color:#fff;font-weight:900;font-size:.92rem;padding:13px 20px;display:none;align-items:center;gap:8px;box-shadow:0 18px 34px -14px rgba(171,69,49,.8);transform:translateY(120%);transition:transform .4s cubic-bezier(.2,.85,.25,1)}
+.pw-reopen.show{display:inline-flex;transform:none}
+
+/* ====== RESPONSIVE ====== */
+@media(max-width:979px){
+  .nav{display:none}
+  .appbar{display:flex}
+  body{padding-top:var(--appbar-h);padding-bottom:calc(var(--mwidget-h) + env(safe-area-inset-bottom))}
+
+  /* floating widget: full-width compact bar pinned to the very bottom */
+  .pwidget{left:0;right:0;width:100%;bottom:0;transform:translateY(140%);opacity:1}
+  .pwidget.show{transform:none}
+  .pw-card{display:flex;align-items:center;gap:14px;padding:10px 15px calc(10px + env(safe-area-inset-bottom));border-radius:16px 16px 0 0;border-left:0;border-right:0;border-bottom:0;box-shadow:0 -12px 32px -16px rgba(66,30,24,.45),0 -2px 0 rgba(227,180,137,.24)}
+  .pw-head{display:none}
+  .pw-info{flex:1;min-width:0}
+  .pw-big{font-size:1.2rem;line-height:1.05}
+  .pw-goal{margin-top:6px}
+  .pw-goalbar{height:7px}
+  .pw-goaltxt{margin-top:5px;font-size:.68rem}
+  .pw-goaltxt b{font-size:.78rem}
+  .pw-cta{width:auto;flex:none;margin-top:0;padding:13px 18px;font-size:.92rem;border-radius:12px}
+
+  .pw-reopen{left:auto;right:16px;bottom:calc(env(safe-area-inset-bottom) + 14px);transform:translateY(160%)}
+  .pw-reopen.show{transform:none}
+
+  .hero .inner{padding-top:22px;padding-bottom:30px}
+  .hero .cta{max-width:none}
+  .coords .c-card{width:calc(50% - 13px);min-width:240px}
+}
+@media(max-width:520px){
+  .coords .c-card{width:100%;max-width:340px}
+  .init{padding:26px 22px}
+}
+.pw-info{display:contents}
+@media(max-width:979px){.pw-info{display:block}}
+@media(min-width:680px){:root{--pad:22px}}
+@media(min-width:720px){.init-grid{grid-template-columns:repeat(3,1fr);gap:18px} .init.full{grid-column:auto}}
+@media(min-width:980px){
+  :root{--pad:28px}
+  .hero .inner{grid-template-columns:1.02fr .98fr;gap:46px;padding-top:54px;padding-bottom:60px}
+  .hero .cta{flex-direction:row;max-width:none}
+  .prog{padding:32px}
+  .drawer,.drawer-overlay{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html.gsap-ready .reveal{opacity:1;transform:none}
+  .pwidget{transform:none;opacity:1}
+}
+
+/* ====== CENTER-ALIGNED: goal card + floating widget ====== */
+#prog{text-align:center}
+#prog .cap{justify-content:center}
+.pw-label,.pw-big{text-align:center}
+@media(max-width:979px){.pw-info{text-align:center}}
+</style>
+</head>
+<body>
+
+<!-- ====== DESKTOP NAV ====== -->
+<nav class="nav" id="nav">
+  <div class="wrap inner">
+    <div class="brand" data-scroll="home">
+      <img src="iitk-logo-full.png" alt="Indian Institute of Technology Kanpur" class="brand-logo" />
+    </div>
+    <div class="links">
+      <a data-scroll="home">Home</a>
+      <a data-scroll="goal">Our Goal</a>
+      <a data-scroll="initiatives">Class Legacy</a>
+      <a data-scroll="faq">FAQs</a>
+      <a class="nav-cta" data-pledge>Pledge Now</a>
+      <a class="nav-cta">Donate now</a>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE APP BAR ====== -->
+<header class="appbar">
+  <div class="brand" data-scroll="home">
+    <img src="iitk-logo-full.png" alt="Indian Institute of Technology Kanpur" class="brand-logo" />
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ====== MOBILE DRAWER ====== -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="drawer" id="drawer" aria-label="Menu">
+  <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  <span class="d-label">Class of 1977 · IIT Kanpur</span>
+  <a data-scroll="home">Home</a>
+  <a data-scroll="goal">Our Goal</a>
+  <a data-scroll="initiatives">Class Legacy</a>
+  <a data-scroll="faq">FAQs</a>
+  <button class="drawer-cta" data-pledge>Make Your Pledge →</button>
+  <button class="drawer-cta">Donate Now →</button>
+
+</nav>
+
+<main>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="home">
+  <div class="wrap inner">
+    <div class="copy">
+      <span class="eyebrow reveal"><span class="dot"></span>Golden Jubilee · 50 Years</span>
+      <h1>Give back to the place that <span class="gr">made us</span></h1>
+      <p class="sub reveal">Our batch is coming together for its Golden Jubilee Reunion.</p>
+
+      <!-- APPEAL FROM BATCH COORDINATOR - replace the placeholder text below with the shared appeal -->
+      <div class="appeal reveal">
+        <span class="a-label">An appeal from your batch coordinator</span>
+        <p>“[Appeal text from the batch coordinator goes here to be shared.]”</p>
+        <div class="a-by">[Coordinator Name], Class of 1977</div>
+      </div>
+
+      <div class="cta reveal">
+        <a class="btn btn-primary btn-lg" data-pledge>Make Your Pledge →</a>
+        <a class="btn btn-primary btn-lg" >Donate Now →</a>
+
+      </div>
+    </div>
+
+    <!-- HERO IMAGE - batch group photo, shown uncropped -->
+    <div class="hero-visual reveal">
+      <div class="hv-frame">
+        <div class="hv-fallback">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M3 17l5-5 4 4 3-3 6 6"/></svg>
+          <span>Batch / campus photo goes here</span>
+        </div>
+        <img src="WhatsApp_Image_2026-09-28_at_10_02_43.jpeg" alt="Class of 1977 at IIT Kanpur" onerror="this.style.display='none'" />
+        <div class="hv-tag">🎓 Golden Jubilee · Class of 1977</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PLEDGE FORM ====== -->
+<section class="pledge" id="pledge">
+  <div class="pledge-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="ph reveal">
+      <h2>Make your <span class="gr">pledge</span></h2>
+      <p class="lede">Pledge an amount, choose how you'd like to fulfil it, and we handle the rest.</p>
+    </div>
+    <div class="form-card reveal">
+      <div class="fbar">
+        <span class="ft">1977 Class Fund - Pledge Form</span>
+        <span class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Secure</span>
+      </div>
+      <iframe id="pledgeForm" title="Class of 1977 Pledge" loading="lazy"
+        src="https://forms.zohopublic.in/iitkanpurdf1/form/Classof1977Pledge1/formperma/EUVvMGAwIqXycmhvRCWEx-cpcGT_sMikDpnnCTPualc"></iframe>
+      <div class="falt">Form not loading? <a href="https://forms.zohopublic.in/iitkanpurdf1/form/Classof1977Pledge1/formperma/EUVvMGAwIqXycmhvRCWEx-cpcGT_sMikDpnnCTPualc" target="_blank" rel="noopener">Open in a new tab →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== BATCH GOAL (current reunion) ====== -->
+<section class="sec" id="goal">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>Our batch <span class="gr">goal</span></h2></div>
+
+    <!-- ============================================================
+         GOAL + PROGRESS CARD
+         data-goal  = target in ₹ Cr   (currently 5)
+         data-raised = amount pledged so far in ₹ Cr
+         ▶  Starts at 0 (no pledges yet). As pledges come in, update
+            data-raised to the batch's actual pledged total - the counter,
+            % and both progress bars (this card + the floating widget)
+            update automatically.
+         ============================================================ -->
+    <div style="max-width:760px;margin:0 auto">
+      <div class="prog reveal" id="prog" data-goal="5" data-raised="0">
+        <div class="cap">🎯 Our Golden Jubilee target</div>
+        <div class="big">₹<span data-count="5" data-dec="0" data-plain>5</span><span class="pl"> Cr</span></div>
+        <div class="bsub">the collective pledge goal we're rallying behind</div>
+
+        <div class="goalbar-wrap">
+          <div class="goalbar-top">
+            <div class="raised"><small>Pledged so far</small>₹<span id="raisedNum" data-count-raised data-dec="2">0.00</span> Cr</div>
+            <div class="pct"><small>of goal</small><span id="pctNum" data-count-pct data-dec="0">0</span>%</div>
+          </div>
+          <div class="pbar" id="pbar"><div class="fill" id="pbarFill"></div></div>
+          <div class="goalbar-foot">
+            <span>Every pledge moves the batch closer.</span>
+            <span><b>₹<span id="remainNum">-</span> Cr</b> to go</span>
+          </div>
+        </div>
+
+        <div class="stats">
+          <!-- TODO: replace the Total Alumni figure below with the actual batch number -->
+          <div class="stat"><div class="sl">Fulfil Over</div><div class="sv">Up to 3 yrs</div></div>
+        </div>
+        <a class="btn btn-primary pcbtn" data-pledge>Make Your Pledge</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CLASS LEGACY (PAST GIFTS) - revamped ====== -->
+<section class="sec legacy" id="initiatives">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>Class <span class="gr">Legacy</span></h2></div>
+
+    <!-- Legacy line - single sentence, amount inline (as in the original) -->
+    <p class="legacy-line reveal">The Class of 1977 has already given <span class="ll-amt">₹<span data-count-legacy data-dec="0" data-goal-legacy="38">0</span><span class="ll-pl"> Cr+</span></span> across all batch initiatives, together.</p>
+
+    <div class="init-grid">
+      <div class="init">
+        <div class="init-top">
+          <span class="tag">Class Fund</span>
+        </div>
+        <h3>1977 Class Fund</h3>
+        <p>The batch's collective fund - contributions from across the Class of 1977, pooled together to support IIT Kanpur.</p>
+      </div>
+      <div class="init">
+        <div class="init-top">
+          <span class="tag">Scholarship</span>
+        </div>
+        <h3>Smt. Dharam Vati Garg Scholarship</h3>
+        <p>A scholarship established by the batch to support deserving IIT Kanpur students.</p>
+      </div>
+      <div class="init">
+        <div class="init-top">
+          <span class="tag">Scholarship</span>
+        </div>
+        <h3>Bhuwan & Indira Joshi Scholarship</h3>
+        <p>A scholarship established by the batch to support deserving IIT Kanpur students.</p>
+      </div>
+      <div class="init">
+        <div class="init-top">
+          <span class="tag">Scholarship</span>
+        </div>
+        <h3>Shri Bishamber Gupta and Smt. Anguri Gupta Scholarship</h3>
+        <p>A scholarship established by the batch to support deserving IIT Kanpur students.</p>
+      </div>
+      <div class="init">
+        <div class="init-top">
+          <span class="tag">Scholarship</span>
+        </div>
+        <h3>Lt. Bishwanath Jha Scholarship</h3>
+        <p>A scholarship established by the batch to support deserving IIT Kanpur students.</p>
+      </div>
+      <div class="init">
+        <div class="init-top">
+          <span class="tag">Scholarship</span>
+        </div>
+        <h3>Smt. Neela Dutt Scholarship</h3>
+        <p>A scholarship established by the batch to support deserving IIT Kanpur students.</p>
+      </div>
+      <div class="init">
+        <div class="init-top">
+          <span class="tag">Chair</span>
+        </div>
+        <h3>Jagdeo Narain Gupta & Smt. Murti Devi Gupta Chair</h3>
+        <p>An endowed faculty chair recognising and supporting academic excellence at IIT Kanpur.</p>
+      </div>
+      <div class="init">
+        <div class="init-top">
+          <span class="tag">School</span>
+        </div>
+        <h3>Gangwal School of Medical Sciences and Technology</h3>
+        <p>Support for IIT Kanpur's school of medical sciences and technology - bridging engineering and healthcare.</p>
+      </div>
+      <div class="init">
+        <div class="init-top">
+          <span class="tag">Program</span>
+        </div>
+        <h3>Skilling Leather Stitchers: A program for rural youth</h3>
+        <p>A skilling initiative for rural youth, creating livelihoods through the leather trade.</p>
+      </div>
+    </div>
+    <p class="init-note reveal"><b>Every contribution counts.</b> Whether to a specific initiative or the 1977 Class Fund, it's all added to the batch's overall total.</p>
+
+    <!-- BATCH COORDINATORS -->
+    <div class="coords reveal">
+      <h3>Batch <span class="gr">Coordinators</span></h3>
+      <div class="c-grid">
+        <div class="c-card">
+          <div class="c-ph"><span class="in"><img src="anil_bansal.jpeg" alt="Mr Anil Bansal" style="object-position:center 30%" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c.8-4 4.2-6 8-6s7.2 2 8 6"/></svg></span></div>
+          <div class="c-name">Mr Anil Bansal</div>
+        </div>
+        <div class="c-card">
+          <div class="c-ph"><span class="in"><img src="hemant-daa.jpg" alt="Mr Hemant Jalan" style="object-position:center 30%" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c.8-4 4.2-6 8-6s7.2 2 8 6"/></svg></span></div>
+          <div class="c-name">Mr Hemant Jalan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="sec alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2><span class="gr">FAQs</span></h2></div>
+    <div class="faq-cols">
+      <div class="faq-col">
+      <div class="faq"><button>What is batch fundraising?<span class="pm">+</span></button><div class="ans"><p>It's a collective effort by alumni to support IIT Kanpur during milestone reunions.</p></div></div>
+      <div class="faq"><button>Why is our batch raising funds now?<span class="pm">+</span></button><div class="ans"><p>Your batch is celebrating a Golden Jubilee - an ideal time to reflect, reconnect, and give back. These contributions help support key initiatives at IIT Kanpur.</p></div></div>
+      <div class="faq"><button>How are funds used?<span class="pm">+</span></button><div class="ans"><p>For scholarships, research, infrastructure, or any batch-approved initiative.</p></div></div>
+      <div class="faq"><button>Can I pledge now and donate later?<span class="pm">+</span></button><div class="ans"><p>Absolutely! You can pledge now and fulfil it over a period of time - up to 3 years.</p></div></div>
+      <div class="faq"><button>If I support a specific initiative, will it count towards the batch fund?<span class="pm">+</span></button><div class="ans"><p>Yes. Any contribution - whether to a specific initiative or the batch project - will be counted towards the batch's overall fundraising total.</p></div></div>
+      <div class="faq"><button>Are donations tax-exempt?<span class="pm">+</span></button><div class="ans"><p>Yes - donations are eligible for tax benefits under 80G in India. For alumni based in the US, contributions can be made through the IITK Foundation (USA), a registered 501(c)(3), making them eligible for US tax benefits. Benefits in the UK/Canada may also apply as per local regulations. For more details, <a href="https://iitkfoundation.org/uploads/guidebook-donating-iitkfoundation.pdf" target="_blank" rel="noopener">click here</a>.</p></div></div>
+      <div class="faq"><button>When do I get a tax receipt?<span class="pm">+</span></button><div class="ans"><p>Within 4–5 working days via email. PAN is mandatory for an Indian 80G receipt.</p></div></div>
+      </div>
+      <div class="faq-col">
+      <div class="faq"><button>Can I donate in installments?<span class="pm">+</span></button><div class="ans"><p>Yes. Monthly / Quarterly / Yearly - all supported, with reminders.</p></div></div>
+      <div class="faq"><button>Will my name be recognised?<span class="pm">+</span></button><div class="ans"><p>Yes, unless you choose to stay anonymous. Recognition is given on donor walls, etc.</p></div></div>
+      <div class="faq"><button>Can I donate from overseas?<span class="pm">+</span></button><div class="ans"><p>Yes. Through IIT Kanpur's global partners. Tax benefits apply as per local laws.</p></div></div>
+      <div class="faq"><button>Is an in-memory / in-honour donation possible?<span class="pm">+</span></button><div class="ans"><p>Yes, you can dedicate your donation to a loved one, mentor, or batchmate. Just write to <a href="mailto:abhishek.ojha@iitkdf.org">abhishek.ojha@iitkdf.org</a>, call <a href="tel:+919109202243">+91 91092 02243</a>, or <a class="wa-inline" href="https://wa.me/919109202243?text=Hi%20Abhishek%2C%20I%27d%20like%20to%20make%20an%20in-memory%2Fin-honour%20donation%20for%20the%20Class%20of%201977." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2m0 1.8a8.2 8.2 0 0 1 6.9 12.6l-.3.5.7 2.5-2.6-.7-.5.3A8.2 8.2 0 1 1 12 3.8m-3 3.4c-.2 0-.5 0-.7.4s-.9.9-.9 2.1.9 2.5 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.8-1.2c.2-.6.2-1.1.1-1.2l-.6-.3c-.3-.2-1.5-.8-1.7-.8s-.4-.1-.6.2-.7.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.3 0-.4.1-.5l.4-.5.3-.5v-.5c0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4z"/></svg>WhatsApp</a>.</p></div></div>
+      <div class="faq"><button>How is progress tracked and shared with the batch?<span class="pm">+</span></button><div class="ans"><p>We keep everyone updated through regular reports - total pledges made and how much has been fulfilled, plus updates on supported projects, along with photos and short stories.</p></div></div>
+      <div class="faq"><button>Can I change my pledge?<span class="pm">+</span></button><div class="ans"><p>Yes - contact the fundraising team to reschedule or modify it.</p></div></div>
+      <div class="faq"><button>What if we exceed the target?<span class="pm">+</span></button><div class="ans"><p>Extra funds go to complementary initiatives or the scale-up of the goal, as per the batch's consent.</p></div></div>
+      </div>
+    </div>
+
+    <div style="text-align:center"><button class="faq-more" id="faqMore">Show all questions ▾</button></div>
+
+    <div class="help-card reveal">
+      <div class="hc-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2m0 1.8a8.2 8.2 0 0 1 6.9 12.6l-.3.5.7 2.5-2.6-.7-.5.3A8.2 8.2 0 1 1 12 3.8m-3 3.4c-.2 0-.5 0-.7.4s-.9.9-.9 2.1.9 2.5 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.8-1.2c.2-.6.2-1.1.1-1.2l-.6-.3c-.3-.2-1.5-.8-1.7-.8s-.4-.1-.6.2-.7.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.3 0-.4.1-.5l.4-.5.3-.5v-.5c0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4z"/></svg></div>
+      <h3>Still have questions?</h3>
+      <p>Talk to Abhishek from the fundraising team - happy to help with anything.</p>
+      <div class="hc-actions">
+        <a class="hc-btn hc-wa" href="https://wa.me/919109202243?text=Hi%20Abhishek%2C%20I%20have%20a%20query%20about%20the%20Class%20of%201977%20Golden%20Jubilee%20fundraising." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2m0 1.8a8.2 8.2 0 0 1 6.9 12.6l-.3.5.7 2.5-2.6-.7-.5.3A8.2 8.2 0 1 1 12 3.8m-3 3.4c-.2 0-.5 0-.7.4s-.9.9-.9 2.1.9 2.5 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.8-1.2c.2-.6.2-1.1.1-1.2l-.6-.3c-.3-.2-1.5-.8-1.7-.8s-.4-.1-.6.2-.7.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.3 0-.4.1-.5l.4-.5.3-.5v-.5c0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4z"/></svg>WhatsApp</a>
+        <a class="hc-btn hc-mail" href="mailto:abhishek.ojha@iitkdf.org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
+        <a class="hc-btn hc-call" href="tel:+919109202243"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CLOSING: merged final CTA + footer ====== -->
+<footer class="closing">
+  <div class="wrap inner">
+    <h2 class="reveal">Be part of the 1977 legacy</h2>
+    <p class="lede reveal">Join your batchmates in giving back to the place that shaped us.</p>
+    <a class="btn pledge-btn reveal" data-pledge>Make Your Pledge →</a>
+
+    <div class="ccontact reveal">
+      <a href="mailto:abhishek.ojha@iitkdf.org">abhishek.ojha@iitkdf.org</a> · <a href="tel:+919109202243">+91 91092 02243</a>
+    </div>
+
+    <div class="cbrand">
+      <b>Class of 1977 · Golden Jubilee</b>
+    </div>
+
+    <div class="caddr">
+      <b>Dean of Resources and Alumni Office</b>
+      3rd Floor, Faculty Building Annex, IIT Kanpur &ndash; 208016
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<!-- ====== FLOATING WIDGET ====== -->
+<!-- Shows the batch TARGET pledge (₹5 Cr) + live progress toward it. -->
+<div class="pwidget" id="pwidget" aria-live="polite">
+  <div class="pw-card">
+    <div class="pw-head">
+      <span class="pw-title">🎓 Class of 1977</span>
+      <button class="pw-x" id="pwClose" aria-label="Dismiss">✕</button>
+    </div>
+    <div class="pw-info">
+      <div class="pw-label">Batch pledge goal</div>
+      <div class="pw-big">₹5<span class="pl"> Cr</span></div>
+      <div class="pw-goal">
+        <div class="pw-goalbar"><div class="pw-goalfill" id="pwFill"></div></div>
+        <div class="pw-goaltxt"><b>₹<span id="pwRaised">0.00</span> Cr</b> pledged · <span id="pwPct">0</span>%</div>
+      </div>
+    </div>
+    <button class="pw-cta" data-pledge>Make Your Pledge</button>
+
+  </div>
+</div>
+<button class="pw-reopen" id="pwReopen">Pledge</button>
+
+<!-- ====== LIBRARIES: GSAP + ScrollTrigger + SplitText + Lenis ====== -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+
+<script>
+/* ============================================================
+   CAMPAIGN CONFIG - single source of truth
+   Read from #prog data-attributes so non-devs can edit the HTML only.
+   ============================================================ */
+const PROG_EL  = document.getElementById('prog');
+const GOAL_CR  = parseFloat(PROG_EL?.dataset.goal   || '5');
+const RAISED_CR= parseFloat(PROG_EL?.dataset.raised || '0');
+const PCT      = GOAL_CR > 0 ? Math.min(100, (RAISED_CR / GOAL_CR) * 100) : 0;
+
+/* ---- helpers ---- */
+function fmt(v, dec){ return Number(v).toFixed(dec); }
+
+/* ============================================================
+   Smooth-scroll navigation (Lenis if present, native fallback)
+   ============================================================ */
+let lenis = null;
+function scrollToId(id){
+  const el = id === 'home' ? document.body : document.getElementById(id);
+  if(!el) return;
+  const y = id === 'home' ? 0 : el.getBoundingClientRect().top + window.pageYOffset - 70;
+  if(lenis){ lenis.scrollTo(y, {duration:1.1}); }
+  else { window.scrollTo({top:y, behavior:'smooth'}); }
+}
+document.querySelectorAll('[data-pledge]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();scrollToId('pledge');}));
+document.querySelectorAll('[data-scroll]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();scrollToId(el.dataset.scroll);}));
+
+/* ===== Mobile hamburger drawer ===== */
+const hamburger=document.getElementById('hamburger');
+const drawer=document.getElementById('drawer');
+const drawerOverlay=document.getElementById('drawerOverlay');
+function openDrawer(){drawer.classList.add('show');drawerOverlay.classList.add('show');hamburger.classList.add('open');hamburger.setAttribute('aria-expanded','true');}
+function closeDrawer(){drawer.classList.remove('show');drawerOverlay.classList.remove('show');hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');}
+hamburger.addEventListener('click',()=>drawer.classList.contains('show')?closeDrawer():openDrawer());
+drawerOverlay.addEventListener('click',closeDrawer);
+document.getElementById('drawerClose').addEventListener('click',closeDrawer);
+drawer.querySelectorAll('a,.drawer-cta').forEach(el=>el.addEventListener('click',closeDrawer));
+addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+
+/* ===== FAQ accordion ===== */
+document.querySelectorAll('.faq>button').forEach(btn=>btn.addEventListener('click',()=>{
+  const item=btn.parentElement,ans=item.querySelector('.ans'),open=item.classList.contains('open');
+  document.querySelectorAll('.faq').forEach(f=>{f.classList.remove('open');f.querySelector('.ans').style.maxHeight=null});
+  if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+}));
+
+/* ===== FAQ: show first 5 on mobile, toggle the rest ===== */
+const faqMore=document.getElementById('faqMore');
+const allFaqs=[...document.querySelectorAll('#faq .faq')];
+let faqExpanded=false;
+function applyFaqCollapse(){
+  const mobile=innerWidth<980;
+  if(mobile&&!faqExpanded){
+    allFaqs.forEach((f,i)=>f.classList.toggle('is-hidden',i>=5));
+    faqMore.style.display='inline-flex';faqMore.textContent='Show all '+allFaqs.length+' questions ▾';
+  }else{
+    allFaqs.forEach(f=>f.classList.remove('is-hidden'));
+    faqMore.style.display=mobile?'inline-flex':'none';
+    if(mobile)faqMore.textContent='Show fewer ▴';
+  }
+}
+faqMore.addEventListener('click',()=>{faqExpanded=!faqExpanded;applyFaqCollapse();if(faqExpanded)faqMore.scrollIntoView({behavior:'smooth',block:'center'});});
+addEventListener('resize',applyFaqCollapse);
+applyFaqCollapse();
+
+/* ===== nav shadow on scroll ===== */
+addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>10));
+
+/* ============================================================
+   FLOATING PLEDGE WIDGET - hides over the form
+   ============================================================ */
+const pw=document.getElementById('pwidget'),pwReopen=document.getElementById('pwReopen');
+const formEl=document.getElementById('pledge');
+let dismissed=false;
+function updateWidget(){
+  const r=formEl.getBoundingClientRect();
+  const overForm=r.top<innerHeight*0.72 && r.bottom>140;
+  if(overForm){pw.classList.remove('show');pwReopen.classList.remove('show');}
+  else if(dismissed){pwReopen.classList.add('show');pw.classList.remove('show');}
+  else{pw.classList.add('show');pwReopen.classList.remove('show');}
+}
+document.getElementById('pwClose').addEventListener('click',()=>{dismissed=true;updateWidget();});
+pwReopen.addEventListener('click',()=>scrollToId('pledge'));
+setTimeout(updateWidget,1500);
+addEventListener('scroll',updateWidget);
+addEventListener('resize',updateWidget);
+
+/* ============================================================
+   MOTION - GSAP + ScrollTrigger + SplitText + Lenis
+   Everything below is progressive-enhancement: if any CDN fails,
+   the page stays fully visible & usable (see the fallback block).
+   ============================================================ */
+(function initMotion(){
+  const hasGSAP = window.gsap && window.ScrollTrigger;
+  if(!hasGSAP){ runFallback(); return; }
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  gsap.registerPlugin(ScrollTrigger);
+  if(window.SplitText) gsap.registerPlugin(SplitText);
+  document.documentElement.classList.add('gsap-ready');
+
+  /* ---- Lenis smooth scroll, driven by GSAP's ticker + synced to ScrollTrigger ---- */
+  if(window.Lenis && !reduce){
+    lenis = new Lenis({ lerp:0.11, wheelMultiplier:1, smoothWheel:true });
+    lenis.on('scroll', ()=>{ ScrollTrigger.update(); updateWidget(); });
+    gsap.ticker.add((t)=> lenis.raf(t*1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  if(reduce){ runFallback(true); return; } /* keep content visible, skip heavy motion */
+
+  /* ---- Hero load sequence - fromTo guarantees a visible end-state.
+         (The .gsap-ready reveal rule sets opacity:0, so a plain .from()
+         animates 0→0 and leaves the image / appeal box invisible.) ---- */
+  gsap.timeline({delay:.2})
+    .fromTo('.hero .eyebrow', {y:20, opacity:0}, {y:0, opacity:1, duration:.6, ease:'power3.out', immediateRender:true}, 0)
+    .fromTo('.hero h1',       {y:22, opacity:0}, {y:0, opacity:1, duration:.7, ease:'power3.out', immediateRender:true}, .08)
+    .fromTo('.hero .sub',     {y:20, opacity:0}, {y:0, opacity:1, duration:.6, ease:'power3.out', immediateRender:true}, .22)
+    .fromTo('.hero .appeal',  {y:24, opacity:0}, {y:0, opacity:1, duration:.6, ease:'power3.out', immediateRender:true}, .32)
+    .fromTo('.hero .cta',     {y:24, opacity:0}, {y:0, opacity:1, duration:.6, ease:'power3.out', immediateRender:true}, .42)
+    .fromTo('.hero-visual',   {y:30, opacity:0, scale:.96}, {y:0, opacity:1, scale:1, duration:.9, ease:'power3.out', immediateRender:true}, .15);
+
+  /* ---- Subtle hero image parallax ---- */
+  /* hero image parallax removed - photo is shown uncropped */
+
+  /* ---- Pledge section: campus photo parallax ---- */
+  if(document.querySelector('.pledge-bg')){
+    gsap.fromTo('.pledge-bg', {yPercent:-8}, {yPercent:8, ease:'none',
+      scrollTrigger:{trigger:'.pledge', start:'top bottom', end:'bottom top', scrub:true}});
+  }
+
+  /* ---- Generic scroll reveals (everything with .reveal outside the hero) ---- */
+  gsap.utils.toArray('.reveal').forEach(el=>{
+    if(el.closest('.hero')) return;
+    gsap.to(el, {opacity:1, y:0, duration:.8, ease:'power3.out',
+      scrollTrigger:{trigger:el, start:'top 88%', once:true}});
+  });
+
+  /* ---- Section headings: word-by-word reveal via SplitText ---- */
+  if(window.SplitText){
+    gsap.utils.toArray('.sec-head h2').forEach(h=>{
+      const s=new SplitText(h,{type:'words'});
+      gsap.from(s.words,{yPercent:60, opacity:0, duration:.6, ease:'power3.out', stagger:.05,
+        scrollTrigger:{trigger:h, start:'top 85%', once:true}});
+    });
+  }
+
+  /* ---- Animated counters ---- */
+  function count(el, to, dec, prefix, suffix){
+    const obj={v:0};
+    gsap.to(obj,{v:to, duration:1.6, ease:'power2.out',
+      scrollTrigger:{trigger:el, start:'top 90%', once:true},
+      onUpdate:()=>{ el.textContent=(prefix||'')+fmt(obj.v,dec)+(suffix||''); },
+      onComplete:()=>{ el.textContent=(prefix||'')+fmt(to,dec)+(suffix||''); }
+    });
+  }
+  const legacyEl=document.querySelector('[data-count-legacy]');
+  if(legacyEl) count(legacyEl, parseFloat(legacyEl.dataset.goalLegacy||'0'), parseInt(legacyEl.dataset.dec||'2',10));
+
+  /* ---- Goal card: counters + animated progress bar (this card + widget) ---- */
+  const raisedEl=document.getElementById('raisedNum');
+  const pctEl=document.getElementById('pctNum');
+  const remainEl=document.getElementById('remainNum');
+  const fillEl=document.getElementById('pbarFill');
+  const pwFill=document.getElementById('pwFill');
+  const pwRaised=document.getElementById('pwRaised');
+  const pwPct=document.getElementById('pwPct');
+  if(remainEl) remainEl.textContent=fmt(Math.max(0,GOAL_CR-RAISED_CR),2);
+
+  ScrollTrigger.create({
+    trigger:'#prog', start:'top 82%', once:true,
+    onEnter:()=>{
+      const o={r:0,p:0};
+      gsap.to(o,{r:RAISED_CR, p:PCT, duration:1.8, ease:'power2.out',
+        onUpdate:()=>{
+          if(raisedEl) raisedEl.textContent=fmt(o.r,2);
+          if(pctEl) pctEl.textContent=fmt(o.p,0);
+          if(pwRaised) pwRaised.textContent=fmt(o.r,2);
+          if(pwPct) pwPct.textContent=fmt(o.p,0);
+        }
+      });
+      gsap.to([fillEl,pwFill], {width:PCT+'%', duration:1.8, ease:'power3.out'});
+    }
+  });
+
+  /* If the widget shows before the goal card is reached, still fill its bar */
+  ScrollTrigger.create({ trigger:'#pledge', start:'top center', once:true,
+    onEnter:()=>{
+      if(pwFill && !pwFill.style.width){ gsap.to(pwFill,{width:PCT+'%',duration:1.4,ease:'power3.out'}); }
+      if(pwRaised && pwRaised.textContent==='0.00'){
+        const o={r:0,p:0};
+        gsap.to(o,{r:RAISED_CR,p:PCT,duration:1.4,ease:'power2.out',
+          onUpdate:()=>{ pwRaised.textContent=fmt(o.r,2); if(pwPct)pwPct.textContent=fmt(o.p,0); }});
+      }
+    }
+  });
+
+  /* ---- Coordinator cards: staggered pop-in ---- */
+  gsap.from('.coords .c-card', {y:34, opacity:0, duration:.65, ease:'power3.out', stagger:.12,
+    scrollTrigger:{trigger:'.coords', start:'top 82%', once:true}});
+
+  /* ---- Legacy cards: staggered rise ---- */
+  gsap.from('.init', {y:30, opacity:0, duration:.7, ease:'power3.out', stagger:.1,
+    scrollTrigger:{trigger:'.init-grid', start:'top 85%', once:true}});
+
+  ScrollTrigger.refresh();
+})();
+
+/* ============================================================
+   FALLBACK - runs if GSAP/CDN failed or reduced-motion.
+   Guarantees the page is fully visible and the numbers/bars are set.
+   ============================================================ */
+function runFallback(keepVisibleOnly){
+  document.documentElement.classList.remove('gsap-ready');
+  document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity='1';el.style.transform='none';});
+  const h1=document.querySelector('.hero h1'); if(h1) h1.style.opacity='1';
+  // set final numbers/bars without animation
+  const set=(id,val)=>{const e=document.getElementById(id); if(e) e.textContent=val;};
+  set('raisedNum', fmt(RAISED_CR,2));
+  set('pctNum', fmt(PCT,0));
+  set('remainNum', fmt(Math.max(0,GOAL_CR-RAISED_CR),2));
+  set('pwRaised', fmt(RAISED_CR,2));
+  set('pwPct', fmt(PCT,0));
+  const legacyEl=document.querySelector('[data-count-legacy]');
+  if(legacyEl) legacyEl.textContent=fmt(parseFloat(legacyEl.dataset.goalLegacy||'0'),parseInt(legacyEl.dataset.dec||'2',10));
+  const f1=document.getElementById('pbarFill'); if(f1) f1.style.width=PCT+'%';
+  const f2=document.getElementById('pwFill'); if(f2) f2.style.width=PCT+'%';
+}
+/* Safety net: if scripts are slow/blocked, reveal after 2.5s no matter what */
+setTimeout(()=>{ if(document.documentElement.classList.contains('gsap-ready') && !window.__revealed){
+  // no-op; GSAP handles it
+}}, 2500);
+addEventListener('load',()=>{ if(!window.gsap){ runFallback(); } });
+
+/* ============================================================
+   Auto-resize the Zoho iframe to its real content height
+   ============================================================ */
+window.addEventListener('message',function(ev){
+  var data=ev.data;
+  if(typeof data!=='string'||data.indexOf('|')===-1) return;
+  var parts=data.split('|');
+  if(parts.length!==2 && parts.length!==3) return;
+  var perma=parts[0], h=parseInt(parts[1],10);
+  var iframe=document.getElementById('pledgeForm');
+  if(iframe && !isNaN(h) && h>100 && iframe.src.indexOf(perma)>-1){
+    iframe.style.height=(h+15)+'px';
+  }
+});
+</script>
+</body>
+</html>
