@@ -109,33 +109,25 @@ section{scroll-margin-top:80px}
 .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--ochre);box-shadow:0 0 0 4px rgba(194,106,67,.22)}
 
 /* ====== HERO ====== */
-.hero{position:relative;overflow:hidden;
-  background:
-    radial-gradient(540px 280px at 88% -10%,rgba(227,180,137,.28),transparent 62%),
-    radial-gradient(640px 360px at -5% 110%,rgba(171,69,49,.08),transparent 60%),
-    linear-gradient(180deg,#FDEFE0 0%,#fff 72%);}
-.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(171,69,49,.05) 1px,transparent 1px);background-size:24px 24px;opacity:.4;pointer-events:none}
-.hero .inner{position:relative;padding-top:38px;padding-bottom:42px;display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
-.hero h1{font-weight:900;letter-spacing:-.02em;line-height:1.04;font-size:clamp(2.2rem,8vw,3.4rem);margin:15px 0 12px;color:var(--ink)}
-.hero h1 .gr{background:linear-gradient(100deg,var(--brick),var(--ochre-light) 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .sub{font-style:italic;font-size:clamp(1.04rem,4vw,1.32rem);color:var(--brick-deep);opacity:.85;max-width:480px;font-weight:400}
-.hero .cta{display:flex;flex-direction:column;gap:11px;margin-top:24px;max-width:360px}
-/* Batch coordinator appeal (placeholder until copy is shared) */
-.appeal{margin-top:22px;background:rgba(255,255,255,.72);border:1px solid var(--line);border-left:4px solid var(--ochre);border-radius:14px;padding:16px 18px;max-width:480px}
-.appeal .a-label{font-size:.62rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);display:block;margin-bottom:6px}
-.appeal p{font-style:italic;font-size:.98rem;color:var(--brick-deep);line-height:1.55;font-weight:400}
-.appeal .a-by{margin-top:8px;font-style:normal;font-size:.8rem;font-weight:900;color:var(--muted)}
-/* Hero image (right side) */
-.hero-visual{position:relative}
-.hero-visual::before{content:"";position:absolute;inset:18px -14px -14px 18px;border-radius:var(--radius);background:linear-gradient(140deg,rgba(227,180,137,.4),rgba(171,69,49,.24));z-index:0}
-.hv-frame{position:relative;z-index:1;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:linear-gradient(140deg,#FDEFE0,var(--cream));display:flex;align-items:center;justify-content:center}
-/* full photo, no crop - frame takes the image's own aspect ratio */
-.hv-frame img{position:relative;z-index:1;width:100%;height:auto;display:block}
-.hv-frame .hv-fallback{position:absolute;inset:0;justify-content:center}
-.hv-fallback{display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--brick);opacity:.55;text-align:center;padding:20px}
-.hv-fallback svg{width:54px;height:54px}
-.hv-fallback span{font-size:.85rem;font-weight:700}
-.hv-tag{position:absolute;left:14px;bottom:14px;z-index:2;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:.8rem;font-weight:900;color:var(--brick-deep);box-shadow:var(--shadow-sm)}
+.hero{position:relative;overflow:hidden;background:var(--ink)}
+.banner{position:relative;width:100%;line-height:0}
+.banner img{width:100%;height:auto;display:block}
+.banner-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,20,12,.05) 0%,rgba(43,20,12,.18) 45%,rgba(43,20,12,.86) 100%)}
+.banner-copy{position:absolute;left:0;right:0;bottom:0;padding:0 clamp(18px,5vw,72px) clamp(22px,4.5vw,60px);line-height:1.2;color:#fff}
+.banner-copy .eyebrow{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.28);color:#fff;backdrop-filter:blur(6px)}
+.banner-copy .eyebrow .dot{background:var(--ochre-light)}
+.hero h1{font-weight:900;letter-spacing:-.02em;line-height:1.02;font-size:clamp(2rem,6.2vw,4.6rem);margin:14px 0 10px;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero h1 .gr{background:linear-gradient(100deg,var(--ochre-light),#FFD9A8 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-style:italic;font-size:clamp(1rem,2vw,1.35rem);color:#fff;opacity:.92;max-width:620px;font-weight:400;line-height:1.45;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.hero .cta{display:flex;flex-direction:row;flex-wrap:wrap;gap:12px;margin-top:22px}
+/* small screens: photo stays uncropped, copy moves below it */
+@media(max-width:719px){
+  .banner-copy{position:static;background:linear-gradient(180deg,var(--ink),var(--brick-deep));padding:22px 20px 28px}
+  .banner-shade{display:none}
+  .hero h1{font-size:clamp(2rem,9vw,2.8rem)}
+  .hero .cta{flex-direction:column}
+  .hero .cta .btn{width:100%}
+}
 
 /* ====== GOAL / PROGRESS CARD ====== */
 .prog{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
@@ -330,8 +322,6 @@ html.gsap-ready .split-mask{overflow:hidden}
   .pw-reopen{left:auto;right:16px;bottom:calc(env(safe-area-inset-bottom) + 14px);transform:translateY(160%)}
   .pw-reopen.show{transform:none}
 
-  .hero .inner{padding-top:22px;padding-bottom:30px}
-  .hero .cta{max-width:none}
   .coords .c-card{width:calc(50% - 13px);min-width:240px}
 }
 @media(max-width:520px){
@@ -344,8 +334,6 @@ html.gsap-ready .split-mask{overflow:hidden}
 @media(min-width:720px){.init-grid{grid-template-columns:repeat(3,1fr);gap:18px} .init.full{grid-column:auto}}
 @media(min-width:980px){
   :root{--pad:28px}
-  .hero .inner{grid-template-columns:1.02fr .98fr;gap:46px;padding-top:54px;padding-bottom:60px}
-  .hero .cta{flex-direction:row;max-width:none}
   .prog{padding:32px}
   .drawer,.drawer-overlay{display:none}
 }
@@ -410,35 +398,17 @@ html.gsap-ready .split-mask{overflow:hidden}
 
 <!-- ====== HERO ====== -->
 <section class="hero" id="home">
-  <div class="wrap inner">
-    <div class="copy">
-      <span class="eyebrow reveal"><span class="dot"></span>Golden Jubilee · 50 Years</span>
-      <h1>Give back to the place that <span class="gr">made us</span></h1>
-      <p class="sub reveal">Our batch is coming together for its Golden Jubilee Reunion.</p>
-
-      <!-- APPEAL FROM BATCH COORDINATOR - replace the placeholder text below with the shared appeal -->
-      <div class="appeal reveal">
-        <span class="a-label">An appeal from your batch coordinator</span>
-        <p>“[Appeal text from the batch coordinator goes here to be shared.]”</p>
-        <div class="a-by">[Coordinator Name], Class of 1977</div>
-      </div>
-
-      <div class="cta reveal">
+  <!-- FULL-WIDTH BANNER - batch group photo, shown uncropped (banner height follows the image) -->
+  <div class="banner">
+    <img src="WhatsApp_Image_2026-09-28_at_10_02_43.jpeg" alt="Class of 1977 at IIT Kanpur" onerror="this.style.display='none'" />
+    <div class="banner-shade"></div>
+    <div class="banner-copy">
+      <span class="eyebrow"><span class="dot"></span>Class of 1977 · IIT Kanpur</span>
+      <h1>Golden Jubilee <span class="gr">Reunion</span></h1>
+      <p class="sub">50 years on, our batch comes together to give back to the place that made us.</p>
+      <div class="cta">
         <a class="btn btn-primary btn-lg" data-pledge>Make Your Pledge →</a>
         <a class="btn btn-primary btn-lg" >Donate Now →</a>
-
-      </div>
-    </div>
-
-    <!-- HERO IMAGE - batch group photo, shown uncropped -->
-    <div class="hero-visual reveal">
-      <div class="hv-frame">
-        <div class="hv-fallback">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M3 17l5-5 4 4 3-3 6 6"/></svg>
-          <span>Batch / campus photo goes here</span>
-        </div>
-        <img src="WhatsApp_Image_2026-09-28_at_10_02_43.jpeg" alt="Class of 1977 at IIT Kanpur" onerror="this.style.display='none'" />
-        <div class="hv-tag">🎓 Golden Jubilee · Class of 1977</div>
       </div>
     </div>
   </div>
@@ -805,12 +775,11 @@ addEventListener('resize',updateWidget);
          (The .gsap-ready reveal rule sets opacity:0, so a plain .from()
          animates 0→0 and leaves the image / appeal box invisible.) ---- */
   gsap.timeline({delay:.2})
-    .fromTo('.hero .eyebrow', {y:20, opacity:0}, {y:0, opacity:1, duration:.6, ease:'power3.out', immediateRender:true}, 0)
-    .fromTo('.hero h1',       {y:22, opacity:0}, {y:0, opacity:1, duration:.7, ease:'power3.out', immediateRender:true}, .08)
-    .fromTo('.hero .sub',     {y:20, opacity:0}, {y:0, opacity:1, duration:.6, ease:'power3.out', immediateRender:true}, .22)
-    .fromTo('.hero .appeal',  {y:24, opacity:0}, {y:0, opacity:1, duration:.6, ease:'power3.out', immediateRender:true}, .32)
-    .fromTo('.hero .cta',     {y:24, opacity:0}, {y:0, opacity:1, duration:.6, ease:'power3.out', immediateRender:true}, .42)
-    .fromTo('.hero-visual',   {y:30, opacity:0, scale:.96}, {y:0, opacity:1, scale:1, duration:.9, ease:'power3.out', immediateRender:true}, .15);
+    .fromTo('.banner img',    {scale:1.04, opacity:0}, {scale:1, opacity:1, duration:1.1, ease:'power3.out', immediateRender:true}, 0)
+    .fromTo('.hero .eyebrow', {y:20, opacity:0}, {y:0, opacity:1, duration:.6, ease:'power3.out', immediateRender:true}, .2)
+    .fromTo('.hero h1',       {y:22, opacity:0}, {y:0, opacity:1, duration:.7, ease:'power3.out', immediateRender:true}, .28)
+    .fromTo('.hero .sub',     {y:20, opacity:0}, {y:0, opacity:1, duration:.6, ease:'power3.out', immediateRender:true}, .42)
+    .fromTo('.hero .cta',     {y:24, opacity:0}, {y:0, opacity:1, duration:.6, ease:'power3.out', immediateRender:true}, .52);
 
   /* ---- Subtle hero image parallax ---- */
   /* hero image parallax removed - photo is shown uncropped */
